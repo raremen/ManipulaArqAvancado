@@ -9,25 +9,14 @@ public class Programa {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Escreva com o nome da pasta: ");
+		System.out.println("Entre com o caminho do arquivo: ");
 		String sCaminho = sc.nextLine();
 		
 		File caminho = new File(sCaminho);
-		File [] pastas = caminho.listFiles(File::isDirectory);
-		System.out.println("Pastas: ");
-		for (File pasta : pastas) {
-			System.out.println(pasta);
-		}
 		
-		File [] arquivos = caminho.listFiles(File::isFile);
-		System.out.println("Arquivos: ");
-		for (File arquivo : arquivos) {
-			System.out.println(arquivo);
-		}
-		
-		boolean bSucesso = new File(sCaminho + "\\PastaCriada").mkdir();
-		System.out.println("Criado com sucesso:" + bSucesso);
-
+		System.out.println("Pega Arquivo   : " + caminho.getName()); // pega so arquivos
+		System.out.println("Pega Diretorios: " + caminho.getParent()); // pega so pastas" Diretorios "
+		System.out.println("Pega Tudo      : " + caminho.getPath()); // pega todo o Caminho "
 		sc.close();
 		
 	}
